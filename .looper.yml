@@ -1,0 +1,53 @@
+branches:
+  - spec: main
+    triggers:
+      - pr:
+          disabled: true
+  - spec: release/*
+    triggers:
+      - push:
+          call: ReleaseFlow
+      - manual:
+          name: Make Release flow
+          call: ReleaseFlow
+      - pr:
+          disabled: true
+  - spec: stage
+    triggers:
+      - push:
+          call: StageFlow
+      - manual:
+          name: Make Stage flow
+          call: StageFlow
+      - pr:
+          disabled: true
+  - spec: develop
+    triggers:
+      - push:
+          call: DevFlow
+      - manual:
+          name: Make Dev flow
+          call: DevFlow
+      - pr:
+          disabled: true
+  - spec: feature/*
+    triggers:
+      - push:
+          call: featureFlow
+      - manual:
+          name: Make feature flow
+          call: featureFlow
+      - pr:
+          disabled: true
+
+flows:
+  default:
+    - echo "Starting default process"
+  StageFlow:
+    - echo "Starting stage process"
+  DevFlow:
+    - echo "Starting dev process"
+  featureFlow:
+    - echo "Starting feature process"
+  ReleaseFlow:
+    - echo "Starting release process"

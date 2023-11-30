@@ -1,0 +1,4 @@
+# remember to fill the field with the proper information
+# codescanaccess= techleadid, managerid, directorid
+codescanaccess=
+codescanpolicy=All
