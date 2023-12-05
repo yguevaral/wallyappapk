@@ -1,3 +1,8 @@
+tools:
+  nodejs: 16.13.2
+  sonarscanner: 4.6.2.2472
+  npm: 9.6.7
+
 branches:
   - spec: main
     triggers:
@@ -7,6 +12,7 @@ branches:
     triggers:
       - push:
           call: ReleaseFlow
+          call: run-sonar
       - manual:
           name: Make Release flow
           call: ReleaseFlow
@@ -16,6 +22,7 @@ branches:
     triggers:
       - push:
           call: StageFlow
+          call: run-sonar
       - manual:
           name: Make Stage flow
           call: StageFlow
@@ -25,6 +32,7 @@ branches:
     triggers:
       - push:
           call: DevFlow
+          call: run-sonar
       - manual:
           name: Make Dev flow
           call: DevFlow
@@ -34,6 +42,7 @@ branches:
     triggers:
       - push:
           call: featureFlow
+          call: run-sonar
       - manual:
           name: Make feature flow
           call: featureFlow
@@ -51,3 +60,6 @@ flows:
     - echo "Starting feature process"
   ReleaseFlow:
     - echo "Starting release process"
+  run-sonar:
+    - (name [SONAR] - Sonar Scanner) sonar-scanner -Dproject.settings=sonar-project.properties
+    - (name [HYGIEIA] - Publish Sonar) hygieia.publishSonar()
