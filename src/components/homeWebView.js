@@ -2,18 +2,10 @@ import { StyleSheet } from "react-native";
 import { WebView } from "react-native-webview";
 
 export default function HomeWebView() {
-    webview = null;
+    let webview = null;
 
-    handleWebViewNavigationStateChange = (newNavState) => {
-        // newNavState looks something like this:
-        // {
-        //   url?: string;
-        //   title?: string;
-        //   loading?: boolean;
-        //   canGoBack?: boolean;
-        //   canGoForward?: boolean;
-        // }
-        
+    const handleWebViewNavigationStateChange = (newNavState) => {
+
         const { url } = newNavState;
         if (!url) return;
 
