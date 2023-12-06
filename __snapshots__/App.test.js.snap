@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "flex": 1,
+        "overflow": "hidden",
+      },
+      undefined,
+    ]
+  }
+>
+  <RNCWebView
+    cacheEnabled={true}
+    fraudulentWebsiteWarningEnabled={true}
+    hasOnFileDownload={false}
+    injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+    injectedJavaScriptForMainFrameOnly={true}
+    javaScriptEnabled={true}
+    messagingEnabled={false}
+    messagingModuleName=""
+    newSource={
+      {
+        "uri": "https://walmartglobal.service-now.com/sn_va_web_client_login.do?sysparm_redirect_uri=https://walmartglobal.service-now.com/sn_va_web_client_app_embed.do",
+      }
+    }
+    onContentProcessDidTerminate={[Function]}
+    onHttpError={[Function]}
+    onLoadingError={[Function]}
+    onLoadingFinish={[Function]}
+    onLoadingProgress={[Function]}
+    onLoadingStart={[Function]}
+    onMessage={[Function]}
+    onShouldStartLoadWithRequest={[Function]}
+    source={
+      {
+        "uri": "https://walmartglobal.service-now.com/sn_va_web_client_login.do?sysparm_redirect_uri=https://walmartglobal.service-now.com/sn_va_web_client_app_embed.do",
+      }
+    }
+    style={
+      [
+        {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        {
+          "backgroundColor": "#ffffff",
+        },
+        undefined,
+      ]
+    }
+    textInteractionEnabled={true}
+    useSharedProcessPool={true}
+  />
+</View>
+`;
