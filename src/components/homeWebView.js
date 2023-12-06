@@ -12,12 +12,12 @@ export default function HomeWebView() {
         if (url.includes("https://walmartglobal.service-now.com/wm_sp")) {
             const newURL = "https://walmartglobal.service-now.com/sn_va_web_client_app_embed.do";
             const redirectTo = 'window.location = "' + newURL + '"';
-            this.webview.injectJavaScript(redirectTo);
+            webview.injectJavaScript(redirectTo);
         }
         
     };
 
-    return <WebView ref={(ref) => (this.webview = ref)} source={{ uri: "https://walmartglobal.service-now.com/sn_va_web_client_login.do?sysparm_redirect_uri=https://walmartglobal.service-now.com/sn_va_web_client_app_embed.do" }} onNavigationStateChange={this.handleWebViewNavigationStateChange} />;
+    return <WebView ref={(ref) => (webview = ref)} source={{ uri: "https://walmartglobal.service-now.com/sn_va_web_client_login.do?sysparm_redirect_uri=https://walmartglobal.service-now.com/sn_va_web_client_app_embed.do" }} onNavigationStateChange={handleWebViewNavigationStateChange} />;
 }
 
 const styles = StyleSheet.create({
