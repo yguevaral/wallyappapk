@@ -1,5 +1,5 @@
 # remember to fill the field with the proper information
 # codescanaccess= techleadid, managerid, directorid
-codescanaccess=vn54dia
+codescanaccess=vn54dia,vn55y80
 codescanpolicy=All
 forcefullscan=true
